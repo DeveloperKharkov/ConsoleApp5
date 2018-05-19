@@ -10,7 +10,16 @@ namespace ConsoleApp5
     {
         static void Main(string[] args)
         {
-            ///s
+            string firstName;
+            string lastName;
+
+            Console.WriteLine("Input first name:");
+            firstName = Console.ReadLine();
+
+            Console.WriteLine("Input last name:");
+            lastName = Console.ReadLine();
+
+            Console.WriteLine($"{firstName} {lastName}");
         }
     }
 }
