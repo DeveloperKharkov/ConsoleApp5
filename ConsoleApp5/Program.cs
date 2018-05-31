@@ -11,15 +11,18 @@ namespace ConsoleApp5
         static void Main(string[] args)
         {
             double radius = 10;
-
-            for (double i = 1d; i < 2*radius; i++)
+            Console.BackgroundColor = ConsoleColor.White;
+            for (double i = -radius; i <= radius; i++)
             {
-                double y = Math.Sqrt(radius*radius-Math.Pow(i-radius, 2));
+                double y = Math.Sqrt(Math.Pow(radius,2)-Math.Pow(i, 2));
+
                 if (y < 0)
                     break;
 
-                int top = 20 + (int)Math.Round(y);
-                int top2 = 20 - (int)Math.Round(y);
+                y /= 2;
+
+                int top = 10 + (int)Math.Round(y);
+                int top2 = 10 - (int)Math.Round(y);
 
                 if (top < 0)
                     break;
@@ -31,7 +34,6 @@ namespace ConsoleApp5
 
             }
             Console.ReadKey();
-            Console.MoveBufferArea(1, 1, 50, 50, 5, 5);
         }
     }
 }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp5", "ConsoleApp5\ConsoleApp5.csproj", "{FEA55F11-0A8E-4128-872A-073E1F64E7F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork", "ConsoleApp5\HomeWork.csproj", "{FEA55F11-0A8E-4128-872A-073E1F64E7F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstGame", "ConsoleApp1\FirstGame.csproj", "{6BCE2A39-9719-4045-949B-A9F4A42EC18A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{D31F45DC-1441-456C-9892-B8BDC4C63636}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6BCE2A39-9719-4045-949B-A9F4A42EC18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BCE2A39-9719-4045-949B-A9F4A42EC18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BCE2A39-9719-4045-949B-A9F4A42EC18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
