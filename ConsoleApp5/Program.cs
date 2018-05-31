@@ -12,7 +12,6 @@ namespace ConsoleApp5
         {
             double radius = 10;
 
-
             for (double i = 1d; i < 2*radius; i++)
             {
                 double y = Math.Sqrt(radius*radius-Math.Pow(i-radius, 2));
