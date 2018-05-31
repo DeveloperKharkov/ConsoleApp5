@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstGame", "ConsoleApp1\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{D31F45DC-1441-456C-9892-B8BDC4C63636}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module7", "Module7\Module7.csproj", "{AC149FC3-CD26-464D-B92A-5A97C9640820}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D31F45DC-1441-456C-9892-B8BDC4C63636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC149FC3-CD26-464D-B92A-5A97C9640820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC149FC3-CD26-464D-B92A-5A97C9640820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC149FC3-CD26-464D-B92A-5A97C9640820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC149FC3-CD26-464D-B92A-5A97C9640820}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
