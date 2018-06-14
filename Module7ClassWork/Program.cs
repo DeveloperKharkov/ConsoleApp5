@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Module7ClassWork
 {
@@ -72,7 +68,7 @@ namespace Module7ClassWork
 
             Console.WriteLine("Output for orderedBooks:");
 
-            IOrderedEnumerable<Book> orderedBooks = books.OrderBy(b => b.);
+            IOrderedEnumerable<Book> orderedBooks = books.OrderBy(b => b.Author);
 
             foreach (Book item in orderedBooks)
             {
