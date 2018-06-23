@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace ItCloud.Education.MathLibs
 {
+    public class MultipyOverflowException: Exception
+    {
+        public MultipyOverflowException(string message, Exception err): base(message, err)
+        {
+
+        }
+    }
+
     public static class Calculator
     {
         public enum Operation
@@ -25,9 +33,26 @@ namespace ItCloud.Education.MathLibs
                 case Operation.Minus:
                     return a - b;
                 case Operation.Devide:
-                    return a / b;
+                    if (b == 0)
+                    {
+                    }
+                    try
+                    {
+                        return a / b;
+                    }
+                    catch (DivideByZeroException err)
+                    {
+                        throw new ArgumentException($"For {operation} operation the '{nameof(b)}' argument should not be equal to 0", err);
+                    }
                 case Operation.Multiply:
-                    return a * b;
+                    try
+                    {
+                        return (int)((long)a * (long)b);
+                    }
+                    catch (ArgumentOutOfRangeException err)
+                    {
+                        throw new MultipyOverflowException($"{a}*{b} is out of integer range", err);
+                    }
                 default:
                     return -1;
             }
