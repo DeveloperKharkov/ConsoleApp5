@@ -44,16 +44,22 @@ namespace Module15ClassWord
     {
         static void Main(string[] args)
         {
-            var books = new List<Book>();
-            books.Add(new Book("Lion Tolstoy", "Voskresenie", 345));
-            books.Add(new TecnicalBook ("Gefrey Rihter", "C# Core", 344, ".Net"));
-            books.Add(new FictionBook("IIi", "Summer", 335));
+            var library = new Library();
 
-            foreach (Book item in books)
-            {
-                item.Print();
-            } 
+            library.Add(new Book("Lion Tolstoy", "Voskresenie", 345));
+            library.Add(new TecnicalBook ("Gefrey Rihter", "C# Core", 344, ".Net"));
+            library.Add(new FictionBook("IIi", "Summer", 335));
 
+            Console.WriteLine("library.Print(BookType.All)");
+            library.Print(BookType.All);
+            Console.WriteLine();
+
+            Console.WriteLine("library.Print(BookType.Technical)");
+            library.Print(BookType.Technical);
+            Console.WriteLine();
+
+            Console.WriteLine("library.Print(BookType.Fiction)");
+            library.Print(BookType.Fiction);
         }
     }
 }
