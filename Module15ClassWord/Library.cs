@@ -13,6 +13,13 @@ namespace Module15ClassWord
         Fiction
     }
 
+    public enum SortingCriteria
+    {
+        None,
+        ByAuthor,
+        ByTitle
+    }
+
     class Library
     {
         private List<Book> _books;
@@ -22,33 +29,50 @@ namespace Module15ClassWord
             _books.Add(book);
         }
 
-        public void Print(BookType bookType)
+        public void Print(BookType bookType, SortingCriteria sortingData)
         {
-            switch (bookType)
+            List<Book> sortedBooks;
+
+            switch (sortingData)
             {
-                case BookType.All:
-                    foreach (var book in _books)
-                    {
-                        book.Print();
-                    }
+                case SortingCriteria.None:
+                    sortedBooks = _books;
                     break;
-                case BookType.Technical:
-                    foreach (var book in _books)
-                    {
-                        if (book is TecnicalBook)
-                        {
-                            book.Print();
-                        }
-                    }
+                case SortingCriteria.ByAuthor:
+                    sortedBooks = _books.OrderBy(b => b.Author).ToList();
                     break;
-                case BookType.Fiction:
-                    foreach (var book in _books.Where(c => c is FictionBook))
-                    {
-                        book.Print();
-                    }
+                case SortingCriteria.ByTitle:
+                    sortedBooks = _books.OrderBy(b => b.Title).ToList();
                     break;
                 default:
-                    break;
+                    throw new ArgumentException($"The sortingCriteria={sortingData} is not supported", nameof(sortingData));
+            }
+
+            foreach (Book item in sortedBooks)
+            {
+                switch (bookType)
+                {
+                    case BookType.All:
+                        item.Print();
+                        break;
+
+                    case BookType.Technical:
+                        if (item is TecnicalBook)
+                        {
+                            item.Print();
+                        }
+                        break;
+
+                    case BookType.Fiction:
+                        if (item is FictionBook)
+                        {
+                            item.Print();
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
 

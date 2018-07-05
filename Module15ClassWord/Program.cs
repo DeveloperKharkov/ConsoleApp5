@@ -47,19 +47,54 @@ namespace Module15ClassWord
             var library = new Library();
 
             library.Add(new Book("Lion Tolstoy", "Voskresenie", 345));
+            library.Add(new Book("Nokolay Gogol", "Viy", 564));
             library.Add(new TecnicalBook ("Gefrey Rihter", "C# Core", 344, ".Net"));
+            library.Add(new TecnicalBook("O'Relly", "Benefits of .Net", 333, ".Net"));
             library.Add(new FictionBook("IIi", "Summer", 335));
+            library.Add(new FictionBook("Yama", "Winter", 456));
 
-            Console.WriteLine("library.Print(BookType.All)");
-            library.Print(BookType.All);
+            Console.WriteLine("Please press the key from 1 to 5:");
+            Console.WriteLine("1. Show all books");
+            Console.WriteLine("2. Show only technical books");
+            Console.WriteLine("3. Show only fiction books");
+            Console.WriteLine("4. Show all books sorted by author");
+            Console.WriteLine("5. Show all books sorted by title");
+            Console.WriteLine("6. Exit");
             Console.WriteLine();
 
-            Console.WriteLine("library.Print(BookType.Technical)");
-            library.Print(BookType.Technical);
-            Console.WriteLine();
+            ConsoleKeyInfo info;
+            do
+            {
+                info = Console.ReadKey();
+                Console.WriteLine();
 
-            Console.WriteLine("library.Print(BookType.Fiction)");
-            library.Print(BookType.Fiction);
+                switch (info.Key)
+                {
+                    case ConsoleKey.D1:
+                        library.Print(BookType.All, SortingCriteria.None);
+                        break;
+
+                    case ConsoleKey.D2:
+                        library.Print(BookType.Technical, SortingCriteria.None);
+                        break;
+
+                    case ConsoleKey.D3:
+                        library.Print(BookType.Fiction, SortingCriteria.None);
+                        break;
+
+                    case ConsoleKey.D4:
+                        library.Print(BookType.All, SortingCriteria.ByAuthor);
+                        break;
+
+                    case ConsoleKey.D5:
+                        library.Print(BookType.All, SortingCriteria.ByTitle);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            while (info.Key != ConsoleKey.D6);
         }
     }
 }
