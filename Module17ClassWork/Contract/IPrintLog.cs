@@ -8,6 +8,6 @@ namespace Module17ClassWork.Contract
 {
     interface IPrintLog
     {
-        void PrintInfo(string data);
+        void PrintInfo();
     }
 }

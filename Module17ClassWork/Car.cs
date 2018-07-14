@@ -9,28 +9,64 @@ namespace Module17ClassWork
 {
     class Car : IPrintLog, IFuel, IMoving
     {
-        private int _tankState;
+        public string Mark { get; private set; }
+        public FuelType Type { get; private set; }
 
-        public FuelType Type => throw new NotImplementedException();
-
+        /// <summary>
+        /// объем бака
+        /// </summary>
         public int TankVolume { get; private set; }
 
-        public int TankState => _tankState;
+        /// <summary>
+        /// текущее количество топлива
+        /// </summary>
+        public int TankState { get; private set; }
 
+        public Car(string mark, FuelType fuelType, int tankVolume)
+        {
+            if (string.IsNullOrWhiteSpace(mark))
+                throw new ArgumentException($"The mark = {mark} is invalid", nameof(mark));
+
+            if (tankVolume <= 0)
+                throw new ArgumentException($"TankVolume should be greater zero", nameof(tankVolume));
+
+            Mark = mark;
+            Type = fuelType;
+            TankVolume = tankVolume;
+            TankState = 0;
+        }
+        /// <summary>
+        ///  позволяет добавить в бак топлива
+        /// </summary>
+        /// <param name="newFuel"></param>
         public void FillTank(int newFuel)
         {
-            throw new NotImplementedException();
+            int remainTankValume = TankVolume - TankState;
+
+            if (newFuel > remainTankValume)
+                throw new ArgumentException($"Amount of new fuel = {newFuel} more than remaining tank valume", nameof(newFuel));
+
+            TankState = TankState + newFuel;
         }
 
-        public void PrintInfo(string data)
+        public void PrintInfo()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Mark={Mark}, Fuel type={Type}, TankVolume={TankVolume}, Volume of fuel in tank ={TankState}");
         }
 
-        //private int 
         public void Move()
         {
-            throw new NotImplementedException();
+            var random = new Random();
+            int randomValue = random.Next(TankVolume / 2);
+
+            if (randomValue > TankState)
+            {
+                TankState = 0;
+            }
+            else
+            {
+                TankState -= randomValue;
+            }
         }
     }
 }

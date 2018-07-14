@@ -47,8 +47,10 @@
     <Compile Include="Contract\IFuel.cs" />
     <Compile Include="Contract\IMoving.cs" />
     <Compile Include="Contract\IPrintLog.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefuelingStation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
